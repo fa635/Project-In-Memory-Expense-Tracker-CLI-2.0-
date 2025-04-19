@@ -1,5 +1,9 @@
 package com.fa.model;
 
-public class ExpenseCategory {
-    
+public enum ExpenseCategory {
+    FOOD,
+    TRANSPORT,
+    UTILITIES,
+    ENTERTAINMENT,
+    OTHER;
 }
