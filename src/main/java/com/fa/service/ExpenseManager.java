@@ -1,5 +1,6 @@
 package com.fa.service;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -8,10 +9,19 @@ import com.fa.model.*;
 
 public class ExpenseManager {
 
-    private List<Expense> expenses = new ArrayList<>();
+    private FileStorageService storage = new FileStorageService();
+    private List<Expense> expenses;
 
-    // ways to load expenses from file if exist
-    // save to file at every modification
+    public ExpenseManager() {
+        File file = new File(FileStorageService.FILE_PATH);
+        if (file.exists()) {
+            System.out.println("Found existing data file. Loading expenses...");
+            expenses = storage.loadExpenses();
+        } else {
+            System.out.println("No data file found. Starting fresh.");
+            expenses = new ArrayList<>();
+        }
+    }
 
     public String getAllExpenses() {
         return expenses.stream()

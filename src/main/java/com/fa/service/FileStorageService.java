@@ -10,7 +10,7 @@ import com.fa.model.*;
 
 public class FileStorageService {
 
-    private static final String FILE_PATH = "expenses.json";  
+    public static final String FILE_PATH = "expenses.json";  
     private ObjectMapper objectMapper = new ObjectMapper(); 
 
     public void saveExpenses(List<Expense> expenses) {
