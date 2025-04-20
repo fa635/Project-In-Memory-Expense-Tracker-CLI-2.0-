@@ -46,8 +46,17 @@ public class ExpenseManager {
                     .collect(Collectors.toList());
     }
 
-    // add some better way later to make it user-friendly
-    // and ask confirmation before delete
+    
+    public boolean removeExpenseByIndex(int index) {
+        if (index >= 0 && index < expenses.size()) {
+            Expense toRemove = expenses.get(index);
+            removeExpense(toRemove.getId());
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public void removeExpense(UUID id) {
         expenses.removeIf(expense -> expense.getId().equals(id));
     }
