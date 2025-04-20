@@ -10,7 +10,8 @@ public class ExpenseManager {
 
     private List<Expense> expenses = new ArrayList<>();
 
-
+    // ways to load expenses from file if exist
+    // save to file at every modification
 
     public String getAllExpenses() {
         return expenses.stream()
