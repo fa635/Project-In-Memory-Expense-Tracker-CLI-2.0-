@@ -4,6 +4,7 @@ import java.io.File;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import com.fa.model.*;
 
@@ -11,6 +12,8 @@ public class ExpenseManager {
 
     private FileStorageService storage = new FileStorageService();
     private List<Expense> expenses;
+
+    // save to file at every modification
 
     public ExpenseManager() {
         File file = new File(FileStorageService.FILE_PATH);
@@ -24,9 +27,9 @@ public class ExpenseManager {
     }
 
     public String getAllExpenses() {
-        return expenses.stream()
-                   .map(Expense::toString)
-                   .collect(Collectors.joining("\n"));
+        return IntStream.range(0, expenses.size())
+                   .mapToObj(i -> (i + 1) + ". " + expenses.get(i).toString())
+                   .collect(Collectors.joining("\n")); 
     }
 
     public void addExpense(Expense expense) {
@@ -46,7 +49,7 @@ public class ExpenseManager {
                     .collect(Collectors.toList());
     }
 
-    
+
     public boolean removeExpenseByIndex(int index) {
         if (index >= 0 && index < expenses.size()) {
             Expense toRemove = expenses.get(index);
@@ -75,6 +78,9 @@ public class ExpenseManager {
                        ));
     }
     
+    public void exportToCSV() {
+        storage.exportToCSV(expenses);
+    }
 
 }
 

@@ -15,14 +15,15 @@ public class Expense {
     LocalDate date;
     String description;
 
-    public Expense(String title, double amount, ExpenseCategory category, LocalDate date, String description) {
+    public Expense(String title, double amount, ExpenseCategory category, String description) {
         this.id = UUID.randomUUID();
         this.title = title;
         this.amount = amount;
         this.category = category;
-        this.date = date;
-        this.description = description;
+        this.date = LocalDate.now();
+        this.description = (description != null) ? description : "";
     }
+
     
 
     @Override
