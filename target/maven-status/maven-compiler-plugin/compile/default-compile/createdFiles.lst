@@ -1,0 +1,6 @@
+com\fa\service\ExpenseManager.class
+com\fa\App.class
+com\fa\model\ExpenseCategory.class
+com\fa\model\Expense.class
+com\fa\service\FileStorageService$1.class
+com\fa\service\FileStorageService.class

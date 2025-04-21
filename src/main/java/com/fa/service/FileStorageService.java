@@ -37,15 +37,15 @@ public class FileStorageService {
 
     public void exportToCSV(List<Expense> expenses) {
         try (PrintWriter writer = new PrintWriter(new FileWriter("expenses.csv"))) {
-            writer.println("ID,Date,Amount,Category,Title,Description"); // header
+            writer.println("ID,Date,Amount,Category,Title,Description"); 
             for (Expense e : expenses) {
                 writer.printf("%s,%s,%.2f,%s,%s,%s%n",
                     e.getId(),
                     e.getDate(),
                     e.getAmount(),
                     e.getCategory(),
-                    e.getTitle().replace(",", " "),       // clean up commas
-                    e.getDescription().replace(",", " ")  // avoid CSV corruption
+                    e.getTitle().replace(",", " "),       
+                    e.getDescription().replace(",", " ") 
                 );
             }
             System.out.println("Expenses exported to expenses.csv");

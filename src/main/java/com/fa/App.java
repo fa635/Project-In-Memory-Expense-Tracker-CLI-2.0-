@@ -120,3 +120,17 @@ public class App
 }
 
 
+/*
+function app {
+    java -cp "target/classes;target/dependency/*" com.fa.App $args
+}
+ */
+
+ 
+/*
+function app {
+    java -cp "target/classes;target/dependency/*" com.fa.App $args
+}
+ */
+
+

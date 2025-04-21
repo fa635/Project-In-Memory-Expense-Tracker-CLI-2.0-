@@ -34,6 +34,7 @@ public class ExpenseManager {
 
     public void addExpense(Expense expense) {
         expenses.add(expense);
+        storage.saveExpenses(expenses);
     }
 
     public List<Expense> filterByCategory(ExpenseCategory category) {
@@ -54,6 +55,7 @@ public class ExpenseManager {
         if (index >= 0 && index < expenses.size()) {
             Expense toRemove = expenses.get(index);
             removeExpense(toRemove.getId());
+            storage.saveExpenses(expenses);
             return true;
         } else {
             return false;
