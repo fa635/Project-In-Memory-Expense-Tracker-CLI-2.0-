@@ -24,6 +24,8 @@ public class Expense {
         this.description = (description != null) ? description : "";
     }
 
+    // for jackson
+    public Expense() {}
     
 
     @Override

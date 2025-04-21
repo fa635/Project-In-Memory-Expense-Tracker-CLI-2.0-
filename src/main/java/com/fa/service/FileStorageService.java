@@ -2,6 +2,7 @@ package com.fa.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,7 +14,12 @@ import com.fa.model.*;
 public class FileStorageService {
 
     public static final String FILE_PATH = "expenses.json";  
-    private ObjectMapper objectMapper = new ObjectMapper(); 
+    private ObjectMapper objectMapper;
+
+    public FileStorageService() {
+        objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new JavaTimeModule()); // Allow serialization of LocalDate
+    }
 
     public void saveExpenses(List<Expense> expenses) {
         try {
