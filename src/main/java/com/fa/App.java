@@ -119,24 +119,6 @@ public class App
     }
 }
 
-
-/*
-function app {
-    java -cp "target/classes;target/dependency/*" com.fa.App $args
-}
- */
-
  
-/*
-function app {
-    java -cp "target/classes;target/dependency/*" com.fa.App $args
-}
- */
-
- // Format output
- // 
- // Print all listing methods in the Cli
- // change in byGategory args[2] to args[1], causes exception
- // format byCategory, byDateRange and total output
 
 

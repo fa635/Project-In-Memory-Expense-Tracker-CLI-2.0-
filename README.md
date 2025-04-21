@@ -28,17 +28,20 @@ A simple command-line expense tracker built with Java. Supports adding, viewing,
 ## Setup
 
 1. Clone the repository
+
 ```bash
 git clone https://github.com/fa635/Project-In-Memory-Expense-Tracker-CLI-2.0-.git
 cd Project-In-Memory-Expense-Tracker-CLI-2.0-
 ```
 
 2. Install dependencies and compile:
+
 ```bash
 mvn clean install
 ```
 
 3. Add this function to your terminal config (`.bashrc`, `.zshrc`, etc.) to simplify running the app:
+
 ```bash
 function app {
     java -cp "target/classes;target/dependency/*" com.fa.App $args
@@ -46,6 +49,7 @@ function app {
 ```
 
 Reload your shell:
+
 ```bash
 source ~/.bashrc  # or ~/.zshrc
 ```
