@@ -23,7 +23,7 @@ public class App
         switch (args[0]) {
 
             case "all":
-                expenseManager.getAllExpenses();
+                System.out.println(expenseManager.getAllExpenses());
                 break;
 
             case "add":
@@ -72,11 +72,11 @@ public class App
                 category = ExpenseCategory.OTHER; 
 
                 try {
-                    category = ExpenseCategory.valueOf(args[2].toUpperCase());
+                    category = ExpenseCategory.valueOf(args[1].toUpperCase());
                 } catch (IllegalArgumentException e) {
                     System.out.println("Invalid category. Defaulting to 'OTHER'.");
                 }
-                expenseManager.filterByCategory(category);
+                System.out.println(expenseManager.filterByCategory(category));
                 break;
 
             case "byDateRange":
@@ -86,15 +86,15 @@ public class App
                 }
                 LocalDate startDate = LocalDate.parse(args[1]);
                 LocalDate endDtae = LocalDate.parse(args[2]);
-                expenseManager.filterByDateRange(startDate, endDtae);
+                System.out.println(expenseManager.filterByDateRange(startDate, endDtae));
                 break;
 
             case "categoryBreakdown":
-                expenseManager.getCategoryBreakdown();
+                System.out.println(expenseManager.getCategoryBreakdown());
                 break;
 
             case "total":
-                expenseManager.getTotalSpent();
+                System.out.println("Total spent: $" + expenseManager.getTotalSpent());
                 break;
 
             case "exportCSV":
@@ -133,7 +133,10 @@ function app {
 }
  */
 
-
- // Allow Jackson to serialize and deserialize LocalDate
+ // Format output
+ // 
+ // Print all listing methods in the Cli
+ // change in byGategory args[2] to args[1], causes exception
+ // format byCategory, byDateRange and total output
 
 

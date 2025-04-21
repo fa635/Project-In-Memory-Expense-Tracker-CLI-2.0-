@@ -13,7 +13,6 @@ public class ExpenseManager {
     private FileStorageService storage = new FileStorageService();
     private List<Expense> expenses;
 
-    // save to file at every modification
 
     public ExpenseManager() {
         File file = new File(FileStorageService.FILE_PATH);
@@ -37,17 +36,19 @@ public class ExpenseManager {
         storage.saveExpenses(expenses);
     }
 
-    public List<Expense> filterByCategory(ExpenseCategory category) {
+    public String filterByCategory(ExpenseCategory category) {
         return expenses.stream()
                     .filter(expense -> expense.getCategory() == category)
-                    .collect(Collectors.toList());
+                    .map(expense -> expense.toString())
+                    .collect(Collectors.joining("\n"));
     }
 
-    public List<Expense> filterByDateRange(LocalDate start, LocalDate end) {
+    public String filterByDateRange(LocalDate start, LocalDate end) {
         return expenses.stream()
                     .filter(expense -> (expense.getDate().isEqual(start) || expense.getDate().isAfter(start)) &&
                                        (expense.getDate().isEqual(end) || expense.getDate().isBefore(end)))
-                    .collect(Collectors.toList());
+                                       .map(expense -> expense.toString())
+                                       .collect(Collectors.joining("\n"));
     }
 
 

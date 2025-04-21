@@ -24,9 +24,9 @@ public class FileStorageService {
     public void saveExpenses(List<Expense> expenses) {
         try {
             objectMapper.writeValue(new File(FILE_PATH), expenses); 
-            System.out.println("Expenses saved successfully!");
+            System.out.println("Storage updated!");
         } catch (IOException e) {
-            System.err.println("Error saving expenses: " + e.getMessage());
+            System.err.println("Error updating storage: " + e.getMessage());
         }
     }
 
