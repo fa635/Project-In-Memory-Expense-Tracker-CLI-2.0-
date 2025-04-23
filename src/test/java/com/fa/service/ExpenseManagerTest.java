@@ -14,12 +14,21 @@ public class ExpenseManagerTest {
 
     private ExpenseManager expenseManager;
     private Expense expense;
+    private Expense food1;
+    private Expense transport;
+    private Expense food2;
 
     @Before
     public void setup() {
         expenseManager = new ExpenseManager();
         expense = new Expense("Lunch", 12.5, ExpenseCategory.FOOD, "Burger");
+        food1 = new Expense("Pizza", 10.0, ExpenseCategory.FOOD, "Dinner");
+        transport = new Expense("Bus", 2.5, ExpenseCategory.TRANSPORT, "Bus fare");
+        food2 = new Expense("Coffee", 3.0, ExpenseCategory.FOOD, "Morning coffee");
         expenseManager.addExpense(expense);
+        expenseManager.addExpense(food1);
+        expenseManager.addExpense(transport);
+        expenseManager.addExpense(food2);
     }   
 
     @Test
@@ -46,5 +55,16 @@ public class ExpenseManagerTest {
     }
 
 
+    @Test
+    public void testFilterByCategory_returnsOnlyMatchingExpensesAsString() {
+
+        String result = expenseManager.filterByCategory(ExpenseCategory.FOOD);
+
+        assertTrue(result.contains("Pizza"));
+        assertTrue(result.contains("Coffee"));
+        assertTrue(result.contains("Lunch"));
+
+        assertFalse(result.contains("Bus"));
+    }
 
 }
