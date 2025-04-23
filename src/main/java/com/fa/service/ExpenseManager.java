@@ -14,9 +14,14 @@ public class ExpenseManager {
     private List<Expense> expenses;
 
 
+    // for testing purpose
     public ExpenseManager() {
+        this(true); 
+    }
+
+    public ExpenseManager(boolean loadFromFile) {
         File file = new File(FileStorageService.FILE_PATH);
-        if (file.exists()) {
+        if (loadFromFile && file.exists()) {
             System.out.println("Found existing data file. Loading expenses...");
             expenses = storage.loadExpenses();
         } else {

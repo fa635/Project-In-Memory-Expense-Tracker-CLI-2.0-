@@ -20,7 +20,7 @@ public class ExpenseManagerTest {
 
     @Before
     public void setup() {
-        expenseManager = new ExpenseManager();
+        expenseManager = new ExpenseManager(false);
         expense = new Expense("Lunch", 12.5, ExpenseCategory.FOOD, "Burger");
         food1 = new Expense("Pizza", 10.0, ExpenseCategory.FOOD, "Dinner");
         transport = new Expense("Bus", 2.5, ExpenseCategory.TRANSPORT, "Bus fare");
@@ -66,5 +66,16 @@ public class ExpenseManagerTest {
 
         assertFalse(result.contains("Bus"));
     }
+
+
+    @Test
+    public void testGetTotalSpent_returnsCorrectSum() {
+        double expectedTotal = expense.getAmount() + food1.getAmount() + transport.getAmount() + food2.getAmount();
+
+        double actualTotal = expenseManager.getTotalSpent();
+
+        assertEquals(expectedTotal, actualTotal, 0.001);
+    }
+
 
 }
