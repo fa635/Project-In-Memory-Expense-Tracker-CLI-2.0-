@@ -77,5 +77,4 @@ public class ExpenseManagerTest {
         assertEquals(expectedTotal, actualTotal, 0.001);
     }
 
-
 }
