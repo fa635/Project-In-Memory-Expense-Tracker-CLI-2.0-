@@ -25,6 +25,12 @@ public class ExpenseManagerTest {
         food1 = new Expense("Pizza", 10.0, ExpenseCategory.FOOD, "Dinner");
         transport = new Expense("Bus", 2.5, ExpenseCategory.TRANSPORT, "Bus fare");
         food2 = new Expense("Coffee", 3.0, ExpenseCategory.FOOD, "Morning coffee");
+
+        expense.setDate(LocalDate.of(2025, 4, 21));
+        food1.setDate(LocalDate.of(2025, 4, 22));
+        transport.setDate(LocalDate.of(2025, 4, 23));
+        food2.setDate(LocalDate.of(2025, 4, 24));
+
         expenseManager.addExpense(expense);
         expenseManager.addExpense(food1);
         expenseManager.addExpense(transport);
@@ -76,5 +82,30 @@ public class ExpenseManagerTest {
 
         assertEquals(expectedTotal, actualTotal, 0.001);
     }
+
+    
+    @Test
+    public void testGetCategoryBreakdown_returnsCorrectSumsPerCategory() {
+        var breakdown = expenseManager.getCategoryBreakdown();
+
+        assertEquals(25.5, breakdown.get(ExpenseCategory.FOOD), 0.001);
+        assertEquals(2.5, breakdown.get(ExpenseCategory.TRANSPORT), 0.001);
+    }
+
+
+    @Test
+    public void testFilterByDateRange_returnsOnlyExpensesWithinRange() {
+
+        LocalDate startDate = LocalDate.of(2025, 4, 22);
+        LocalDate endDate = LocalDate.of(2025, 4, 23);
+
+        String result = expenseManager.filterByDateRange(startDate, endDate);
+
+        assertTrue(result.contains("Pizza"));
+        assertTrue(result.contains("Bus"));
+        assertFalse(result.contains("Lunch"));
+        assertFalse(result.contains("Coffee"));
+    }
+
 
 }

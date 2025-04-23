@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.fa.service.ExpenseManagerTest" time="1.787" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.fa.service.ExpenseManagerTest" time="1.357" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="FR"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.6.7-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\bfalo\AppData\Local\Temp\surefire12169228943094619352\surefirebooter176268801160167380.jar C:\Users\bfalo\AppData\Local\Temp\surefire12169228943094619352 2025-04-23T12-08-15_857-jvmRun1 surefire4506937438640459527tmp surefire_014060782119240074480tmp"/>
+    <property name="sun.java.command" value="C:\Users\bfalo\AppData\Local\Temp\surefire17499713858026985165\surefirebooter14968284005379040164.jar C:\Users\bfalo\AppData\Local\Temp\surefire17499713858026985165 2025-04-23T12-20-11_030-jvmRun1 surefire17733145341796242378tmp surefire_012593306777526633966tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\bfalo\java vscode\personal projects\projectinmemoryexpensetrackercli\target\test-classes;C:\Users\bfalo\java vscode\personal projects\projectinmemoryexpensetrackercli\target\classes;C:\Users\bfalo\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\bfalo\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\bfalo\.m2\repository\org\projectlombok\lombok\1.18.30\lombok-1.18.30.jar;C:\Users\bfalo\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.13.0\jackson-databind-2.13.0.jar;C:\Users\bfalo\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.13.0\jackson-annotations-2.13.0.jar;C:\Users\bfalo\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.13.0\jackson-core-2.13.0.jar;C:\Users\bfalo\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.2\jackson-datatype-jsr310-2.15.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\bfalo\AppData\Local\Temp\surefire12169228943094619352\surefirebooter176268801160167380.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\bfalo\AppData\Local\Temp\surefire17499713858026985165\surefirebooter14968284005379040164.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.6+7-LTS"/>
@@ -59,9 +59,10 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testAddExpense_increasesListSize" classname="com.fa.service.ExpenseManagerTest" time="1.448"/>
-  <testcase name="testFilterByCategory_returnsOnlyMatchingExpensesAsString" classname="com.fa.service.ExpenseManagerTest" time="0.07"/>
-  <testcase name="testRemoveExpenseByIndex_decreasesListSize" classname="com.fa.service.ExpenseManagerTest" time="0.049"/>
-  <testcase name="testGetCategoryBreakdown_returnsCorrectSumsPerCategory" classname="com.fa.service.ExpenseManagerTest" time="0.115"/>
-  <testcase name="testGetTotalSpent_returnsCorrectSum" classname="com.fa.service.ExpenseManagerTest" time="0.034"/>
+  <testcase name="testFilterByDateRange_returnsOnlyExpensesWithinRange" classname="com.fa.service.ExpenseManagerTest" time="0.917"/>
+  <testcase name="testAddExpense_increasesListSize" classname="com.fa.service.ExpenseManagerTest" time="0.043"/>
+  <testcase name="testFilterByCategory_returnsOnlyMatchingExpensesAsString" classname="com.fa.service.ExpenseManagerTest" time="0.055"/>
+  <testcase name="testRemoveExpenseByIndex_decreasesListSize" classname="com.fa.service.ExpenseManagerTest" time="0.234"/>
+  <testcase name="testGetCategoryBreakdown_returnsCorrectSumsPerCategory" classname="com.fa.service.ExpenseManagerTest" time="0"/>
+  <testcase name="testGetTotalSpent_returnsCorrectSum" classname="com.fa.service.ExpenseManagerTest" time="0.018"/>
 </testsuite>

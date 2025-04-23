@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.fa.service.ExpenseManagerTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.787 s - in com.fa.service.ExpenseManagerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.357 s - in com.fa.service.ExpenseManagerTest
