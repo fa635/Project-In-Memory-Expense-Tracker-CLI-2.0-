@@ -31,6 +31,11 @@ public class ExpenseManager {
                    .collect(Collectors.joining("\n")); 
     }
 
+    // for testing purpose
+    public List<Expense> getExpensesList() {
+        return expenses;
+    }
+
     public void addExpense(Expense expense) {
         expenses.add(expense);
         storage.saveExpenses(expenses);
